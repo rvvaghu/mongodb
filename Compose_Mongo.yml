@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+
+  mongodb:
+    image:  mongo:4.0.10
+    container_name: mongo_container
+    restart: no
+    volumes:
+      - type: bind
+        source: ./mongodb/data/bases
+        target: /usr/data/bases
+    ports:
+      - 27017
